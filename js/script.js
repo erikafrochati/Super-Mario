@@ -9,7 +9,6 @@ floor2 = document.querySelector('.floor-2')
 floor3 = document.querySelector('.floor-3')
 
 
-
 /*================ Função Start ===================*/ 
 
 const start = () => {
@@ -45,18 +44,6 @@ const start = () => {
 
 document.addEventListener('keydown', start);
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*================ Função Pulo ===================*/ 
 
 const jump = () => {
@@ -68,12 +55,6 @@ const jump = () => {
 }
 
 document.addEventListener('keydown', jump);
-
-
-
-
-
-
 
 /*================ Código para acabar o jogo ===================*/ 
 
@@ -94,7 +75,7 @@ const checkGameOver = setInterval(() => {
             mario.style.animation = 'none';
             mario.style.bottom = `${marioPosition}px`;
 
-            mario.src = '/images/game-over.png';
+            mario.src = '/imagens/game-over.png';
             mario.style.width = '75px';
             mario.style.marginLeft = '50px';
 

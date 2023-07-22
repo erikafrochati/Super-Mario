@@ -22,9 +22,6 @@ body{
     background: linear-gradient(#87CEE8, #E0F6FF);
 }
 
-
-
-
 /*=============== Mario ===============*/
 
 .mario {
@@ -55,11 +52,6 @@ body{
     }
     
 }
-
-
-
-
-
 
 /*=============== Cenário ===============*/
 
@@ -138,8 +130,6 @@ body{
 }
 
 
-
-
 .floor-2{
     position: absolute; 
     right: -1500px;
@@ -160,8 +150,6 @@ body{
 }
 
 
-
-
 .floor-3{
     position: absolute;  
     right: -1500px;
@@ -180,9 +168,6 @@ body{
         right: 100%;    
     }
 }
-
-
-
 
 /*Nuvens*/
 .clouds-1 {
