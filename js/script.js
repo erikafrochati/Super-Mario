@@ -9,6 +9,7 @@ floor2 = document.querySelector('.floor-2')
 floor3 = document.querySelector('.floor-3')
 
 
+
 /*================ Função Start ===================*/ 
 
 const start = () => {
@@ -21,10 +22,10 @@ const start = () => {
     mario.style.width = '150px';
     mario.style.marginLeft = '50px';
 
+
     function grassAnimation(){
         grass.classList.add('grass-animation');
             }setInterval(grassAnimation, 8000);
-
 
     function floorAnimation1(){
         floor1.classList.add('floor-animation-1');
@@ -37,9 +38,8 @@ const start = () => {
     function floorAnimation3(){
         floor3.classList.add('floor-animation-3');
             }setInterval(floorAnimation3, 3100); 
-     
-            
-    audioStart.play();
+     audioStart.play();
+
 }
 
 document.addEventListener('keydown', start);
@@ -94,7 +94,6 @@ const checkGameOver = setInterval(() => {
             document.getElementById("text-start").style.color = "black";
             document.getElementById("text-start").innerHTML="<strong>GAME OVER</strong>";
 
-
             function stopAudioStart(){
                 audioStart.pause();
                 }stopAudioStart();
@@ -104,7 +103,10 @@ const checkGameOver = setInterval(() => {
             function stopAudio(){
                 audioGameOver.pause();
                 }setTimeout(stopAudio, 8000);
-
+            
+            
             clearInterval(checkGameOver);
          }
+       
+         
 }, 10);

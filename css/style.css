@@ -41,14 +41,18 @@ body{
     0%{
         bottom: 0px;
     }
-    45%{
+    40%{
         bottom: 180px
     }
-    55%{
+    50%{
         bottom: 180px;
     }
+    60%{
+        bottom: 180px;
+    }
+    
     100%{
-        bottom:0px;
+        bottom: px;
     }
     
 }
@@ -191,6 +195,101 @@ body{
     z-index: 2;
     animation: clouds-animation-3 75s infinite linear;
 }
+
+/* jogo do menino*/
+
+
+.overlay-content {
+    position: relative;
+    width: 60%;
+    height: 60%;
+  
+    border-radius: 10px;
+    background: url('../assets/overlay-background.png') center center;
+    background-size: contain;
+  
+    overflow: hidden;
+  
+    z-index: 2;
+  }
+  
+  .overlay-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+  
+    text-shadow: 0px 0px 10px #000000;
+  }
+  
+  .overlay-score {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .overlay-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+  }
+  
+  .reset {
+    outline: none;
+    background: #a40000df;
+    border-radius: 10px;
+    color: #efefef;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+  
+    padding: 10px;
+  }
+  
+  .reset:active {
+    transform: scale(0.9);
+  }
+  
+  .overlay-footer {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  
+    background: #0000009a;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    height: 95vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87cefa 0%, #bdd8e3 100%);
+  
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(121, 181, 31, 0.249);
+    border-bottom: 10px solid #79b51f;
+    border-radius: 10px;
+  }
+  
+  .score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #598419;
+  
+    padding: 10px;
+    background: #bdd8e3;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+  }
+
+
 
 
 @keyframes clouds-animation-1 {
