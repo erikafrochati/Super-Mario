@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Mario</title>
-    <link rel="stylesheet" href="/css/style.css">
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Mario</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-        <div class="start">
-          <div class="overlay-content">
-            <div class="overlay-title">
-              <h1>Super Mario Game</h1>
-              <span class="overlay-score">Seu score 0</span>
-            </div>
-            <div class="overlay-buttons">
-              <button class="reset">Reiniciar</button>
-        </div>
+  <div class="start">
+    <div class="overlay-content">
+      <div class="overlay-title">
+        <h1>Super Mario Game</h1>
+        <span class="game-score">Seu Score: 0</span> 
+      </div> 
+      <div class="overlay-buttons">
+        <button class="reset">Reiniciar</button>
+      </div>
+    </div>
+  </div>       
 
-        <div class="game-board">
-            <h2 class="score">SCORE 0</h2>
-            <span class="start-game"></span>
+  <div class="game-board">
+    <span class="start-game"></span>
 
-            <img src="/imagens/clouds.png" class="clouds-1">
-            <img src="/imagens/clouds.png" class="clouds-2">
-            <img src="/imagens/clouds.png" class="clouds-3">
-            <img src="/imagens/mario-stop.png" class="mario">
-            <img src="/imagens/pipe.png" class="pipe">
-            <img src="/imagens/grass.png" class="grass">
-            
-        
-            <div class="floor">
-                <img src="/imagens/floor.png" class="floor-1">
-                <img src="/imagens/floor.png" class="floor-2">
-                <img src="/imagens/floor.png" class="floor-3">
-            </div>
-        </div>
+    <img src="/imagens/clouds.png" class="clouds-1">
+    <img src="/imagens/clouds.png" class="clouds-2">
+    <img src="/imagens/clouds.png" class="clouds-3">
+    <img src="/imagens/mario-stop.png" class="mario">
+    <img src="/imagens/pipe.png" class="pipe">
+    <img src="/imagens/grass.png" class="grass">
+
+    <div class="floor">
+      <img src="/imagens/floor.png" class="floor-1">
+      <img src="/imagens/floor.png" class="floor-2">
+      <img src="/imagens/floor.png" class="floor-3">
+    </div>
+  </div>
+
+  <p id="text-start">Para jogar, pressione alguma tecla!<br/>O tempo é contabilizado a cada segundo...</p>
 
 
-<p id="text-start">Para jogar, pressione alguma tecla!<br/>O tempo é contabilizado a cada segundo...</p>
-     
-    <script src="/js/script.js" defer></script>   
+  <script src="/js/script.js" defer></script>   
 </body>
 </html>
