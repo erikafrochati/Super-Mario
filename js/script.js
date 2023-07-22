@@ -1,5 +1,4 @@
 let score = 0; // Variável para armazenar a pontuação
-
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const grass = document.querySelector('.grass');
@@ -61,10 +60,40 @@ function updateScore() {
   
     // Atualizar o elemento com a classe "game-score" durante o jogo
     const scoreElement = document.querySelector('.game-score');
-    scoreElement.textContent = `Seu Score: ${score}`;
+    scoreElement.textContent = `SCORE: ${score}`;
     document.getElementById("text-start").innerHTML = "<strong>GAME OVER</strong> - Pontuação: " + score;
   }
   
+/*================ Função para reiniciar o jogo ===================*/
+const resetButton = document.querySelector('.reset');
+resetButton.addEventListener('click', resetGame);
+
+function resetGame() {
+  score = 0;
+  isGameStarted = false;
+  const scoreElement = document.querySelector('.game-score');
+  scoreElement.textContent = 'Seu Score: 0';
+  mario.style.bottom = '0';
+  mario.classList.remove('jump');
+  resetPipeAnimation();
+  resetGrassAnimation();
+  document.getElementById('text-start').textContent =
+    'Para jogar, pressione a barra de espaço!\nO tempo é contabilizado a cada segundo...';
+}
+
+function resetPipeAnimation() {
+  pipe.classList.remove('pipe-animation');
+  void pipe.offsetWidth; // Resetando a animação do cano
+  pipe.classList.add('pipe-animation');
+}
+
+function resetGrassAnimation() {
+  grass.classList.remove('grass-animation');
+  void grass.offsetWidth; // Resetando a animação da grama
+  grass.classList.add('grass-animation');
+}
+
+
 /*================ Código para acabar o jogo ===================*/
 const checkGameOver = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
