@@ -10,17 +10,18 @@ body{
     background-color: rgb(236, 236, 236);
 }
 
+ /* Ajustar o tamanho da tela */
 
-.game-board {
-    
-    width: 100%;
-    height: 500px;
+ .game-board {
+    width: 80%;
+    height: 70vh; /* 80% da altura da tela */
     border-top: 800px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEE8, #E0F6FF);
-}
+  }
+
 
 /*=============== Mario ===============*/
 
@@ -93,7 +94,7 @@ body{
 }
 
 .grass-animation{
-    animation: grass-animation 3s infinite linear;
+    animation: grass-animation 2s infinite linear;
 }
 
 @keyframes grass-animation {
@@ -198,8 +199,8 @@ animation: floor-animation-3 6.2s infinite linear;
     animation: clouds-animation-3 75s infinite linear;
 }
 
-
   /* Ajustar o tamanho da tela */
+
 .game-board {
     width: 80%;
     height: 70vh; /* 80% da altura da tela */
@@ -210,13 +211,15 @@ animation: floor-animation-3 6.2s infinite linear;
     background: linear-gradient(#87CEE8, #E0F6FF);
   }
 
+  
+/*Botão Reiniciar*/
 .overlay-content {
     position: relative;
-    width: 60%;
-    height: 60%;
+    width: 40%;
+    height: 40%;
   
     border-radius: 10px;
-    background: url('../assets/overlay-background.png') center center;
+    background: url('../assets/overlay-background.png') left;
     background-size: contain;
   
     overflow: hidden;
@@ -227,25 +230,34 @@ animation: floor-animation-3 6.2s infinite linear;
   /* Estilos para o elemento que contém o texto da pontuação */
   .overlay-title {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    text-align:end;
+    justify-content:flex-end;
     width: 100%;
     padding: 20px;
   
     text-shadow: 0px 0px 10px #000000;
   }
-  
+
   .overlay-score {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
+    text-align:end;
+    justify-content:flex-start;
   }
   
+   /* Estilos para o elemento .start, que contém o título */
+.start {
+    display: flex;
+    flex-direction: column;
+    text-align:justify;
+    justify-content:end;
+  }
   
   /* Estilos para o bottom reset */
   .overlay-buttons {
     display: flex;
-    align-items: right;
-    justify-content: center;
+    align-items:flex-start;
+    justify-content:right;
     width: 100%;
     height: 70%;
   }
@@ -281,13 +293,6 @@ animation: floor-animation-3 6.2s infinite linear;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   } 
 
-  /* Estilos para o elemento .start, que contém o título */
-.start {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centralizar horizontalmente */
-    justify-content: center; /* Centralizar verticalmente */
-  }
 
 
 @keyframes clouds-animation-1 {

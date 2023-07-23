@@ -1,4 +1,4 @@
-let score = 0; // Variável para armazenar a pontuação
+ 
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const grass = document.querySelector('.grass');
