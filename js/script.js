@@ -9,6 +9,21 @@ const floor1 = document.querySelector('.floor-1');
 const floor2 = document.querySelector('.floor-2');
 const floor3 = document.querySelector('.floor-3');
 
+let score = 0; // Adicione esta linha para declarar e inicializar a variável score
+let gameStarted = false; // Adicione a variável gameStarted e defina como false
+
+
+
+// Seleciona o botão de "Iniciar" pelo ID
+const startButton = document.getElementById('start-button');
+
+// Adiciona o manipulador de evento para o clique no botão de "Iniciar"
+startButton.addEventListener('click', () => {
+  start(); // Inicia o jogo ao clicar no botão de "Iniciar"
+  gameStarted = true;
+});
+
+
 /*================ Função Start ===================*/
 const start = () => {
   document.getElementById("text-start").style.color = "rgb(236, 236, 236)";
@@ -40,21 +55,34 @@ const start = () => {
   audioStart.play();
 }
 
-document.addEventListener('keydown', start);
+document.addEventListener('keydown', (event) => {
+  if (!gameStarted) {
+    if (event.code === "KeyR") { // Verifica se a tecla pressionada é a tecla "R"
+      restart(); // Inicia o jogo ao pressionar a tecla "R"
+      gameStarted = true;
+    }
+  }
+});
 
 /*================ Função Pulo ===================*/
-const jump = () => {
-  mario.classList.add('jump');
 
-  setTimeout(() => {
-    mario.classList.remove('jump');
-    updateScore(); // Chama a função para incrementar a pontuação após o pulo do Mario
-  }, 1500);
+const jump = (event) => {
+  if (gameStarted) { // Verifique se o jogo está em andamento
+    if (event.code === "Space") { // Verifica se a tecla pressionada é a barra de espaço
+      mario.classList.add('jump');
+
+      setTimeout(() => {
+        mario.classList.remove('jump');
+        updateScore();
+      }, 1500);
+    }
+  }
 }
 
 document.addEventListener('keydown', jump);
 
 /*================ Função para atualizar a pontuação ===================*/
+
 function updateScore() {
     score += 10; // Você pode ajustar a pontuação de acordo com suas preferências
   
@@ -64,33 +92,38 @@ function updateScore() {
     document.getElementById("text-start").innerHTML = "<strong>GAME OVER</strong> - Pontuação: " + score;
   }
   
-/*================ Função para reiniciar o jogo ===================*/
-const resetButton = document.querySelector('.reset');
-resetButton.addEventListener('click', resetGame);
+/*================================ Função para Reiniciar ==================================*/
+// Selecione o botão de reinício pelo ID
+const restartButton = document.getElementById('restart-button');
 
-function resetGame() {
+// Adicione o manipulador de evento para o clique no botão de reinício
+restartButton.addEventListener('click', () => {
+  // Limpa a tela e reinicia o jogo
+  restart();
+});
+
+// Função para reiniciar o jogo
+function restart() {
+  // Remova a mensagem de "Game Over"
+  document.getElementById("text-start").innerHTML = "Para jogar, pressione alguma tecla!<br/>O tempo é contabilizado a cada segundo...";
+  
+  // Resete a pontuação para zero
   score = 0;
-  isGameStarted = false;
   const scoreElement = document.querySelector('.game-score');
-  scoreElement.textContent = 'Seu Score: 0';
-  mario.style.bottom = '0';
-  mario.classList.remove('jump');
-  resetPipeAnimation();
-  resetGrassAnimation();
-  document.getElementById('text-start').textContent =
-    'Para jogar, pressione a barra de espaço!\nO tempo é contabilizado a cada segundo...';
-}
-
-function resetPipeAnimation() {
-  pipe.classList.remove('pipe-animation');
-  void pipe.offsetWidth; // Resetando a animação do cano
-  pipe.classList.add('pipe-animation');
-}
-
-function resetGrassAnimation() {
-  grass.classList.remove('grass-animation');
-  void grass.offsetWidth; // Resetando a animação da grama
-  grass.classList.add('grass-animation');
+  scoreElement.textContent = `SCORE: ${score}`;
+  
+  // Coloque o Mario novamente na posição inicial
+  mario.src = '/imagens/mario.gif';
+  mario.style.width = '150px';
+  mario.style.marginLeft = '50px';
+  
+  // Reinicie os obstáculos e animações necessárias para começar o jogo novamente
+  
+  // Tornar o botão de reinício invisível novamente
+  restartButton.style.display = "none";
+  
+  // Inicie o jogo novamente
+  start();
 }
 
 
@@ -102,7 +135,7 @@ const checkGameOver = setInterval(() => {
   const floorPosition1 = floor1.offsetLeft;
   const floorPosition2 = floor2.offsetLeft;
   const floorPosition3 = floor3.offsetLeft;
-
+ 
   if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
     pipe.style.animation = 'none';
     pipe.style.left = `${pipePosition}px`;

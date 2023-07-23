@@ -71,7 +71,7 @@ body{
 }
 
 .pipe-animation{
-    animation: grass-animation 3s infinite linear;
+    animation: pipe-animation 3s infinite linear;
 }
 
 @keyframes pipe-animation {
@@ -203,7 +203,7 @@ animation: floor-animation-3 6.2s infinite linear;
 
 .game-board {
     width: 80%;
-    height: 70vh; /* 80% da altura da tela */
+    height: 80vh; /* 80% da altura da tela */
     border-top: 800px;
     margin: 0 auto;
     position: relative;
@@ -227,25 +227,19 @@ animation: floor-animation-3 6.2s infinite linear;
     z-index: 2;
   }
   
-  /* Estilos para o elemento que contém o texto da pontuação */
+  /* Estilos para o Super Mario Game */
+  
   .overlay-title {
     display: flex;
-    text-align:end;
+    text-align:right;
     justify-content:flex-end;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
   
-    text-shadow: 0px 0px 10px #000000;
-  }
-
-  .overlay-score {
-    font-size: 1rem;
-    font-weight: bold;
-    text-align:end;
-    justify-content:flex-start;
+    text-shadow: 0px 0px 10px #021920;
   }
   
-   /* Estilos para o elemento .start, que contém o título */
+   /* Estilos para o elemento Botão Iniciar e Score, com um barra.*/
 .start {
     display: flex;
     flex-direction: column;
@@ -253,38 +247,13 @@ animation: floor-animation-3 6.2s infinite linear;
     justify-content:end;
   }
   
-  /* Estilos para o bottom reset */
-  .overlay-buttons {
-    display: flex;
-    align-items:flex-start;
-    justify-content:right;
-    width: 100%;
-    height: 70%;
-  }
-  
-  .reset {
-    outline: none;
-    background: #a40000df;
-    border-radius: 10px;
-    color: #efefef;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-  
-    padding: 10px;
-  }
-  
-  .reset:active {
-    transform: scale(0.9);
-  }
-  
-  
+
   /* Estilos para o elemento que exibe a pontuação durante o jogo */
   .game-score {
     text-align: right;
     display: inline-block;
-    background-color: #333;
-    color: #fff;
+    background-color: #87CEE8;
+    color: #160f0f;
     padding: 8px 15px;
     border-radius: 5px;
     font-size: 20px;
@@ -293,8 +262,31 @@ animation: floor-animation-3 6.2s infinite linear;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   } 
 
-
-
+  
+/* Estilos para o botão de "Iniciar" */
+#start-button {
+    text-align: left;
+    display: inline-block;
+    background-color: #3e8e41;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(56, 42, 189, 0.2);
+  }
+  
+ /* Estilizar o botão quando o cursor estiver em cima */
+#start-button:hover {
+    background-color: #45a049; /* Cor de fundo mais escura quando o cursor estiver em cima */
+  }
+  
+  /* Estilizar o botão quando estiver pressionado */
+  #start-button:active {
+    background-color: #3e8e41; /* Cor de fundo ainda mais escura quando o botão estiver pressionado */
+  }
+  
 @keyframes clouds-animation-1 {
     from{
         right: -550px;
