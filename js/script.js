@@ -13,16 +13,22 @@ let score = 0; // Adicione esta linha para declarar e inicializar a variável sc
 let gameStarted = false; // Adicione a variável gameStarted e defina como false
 
 
-
-// Seleciona o botão de "Iniciar" pelo ID
+// Selecione o botão de "Iniciar" pelo ID
 const startButton = document.getElementById('start-button');
 
-// Adiciona o manipulador de evento para o clique no botão de "Iniciar"
+// Adicione o manipulador de evento para o clique no botão de "Iniciar"
 startButton.addEventListener('click', () => {
-  start(); // Inicia o jogo ao clicar no botão de "Iniciar"
-  gameStarted = true;
+  restart(); // Reinicia o jogo ao clicar no botão de "Iniciar"
+  gameStarted = true; // Define a variável para verdadeiro para permitir que o Mario pule novamente
 });
 
+// Função para reiniciar o jogo
+function restart() {
+  // Restante da lógica para reiniciar o jogo...
+
+  // Iniciar o jogo novamente
+  start();
+}
 
 /*================ Função Start ===================*/
 const start = () => {
@@ -92,40 +98,6 @@ function updateScore() {
     document.getElementById("text-start").innerHTML = "<strong>GAME OVER</strong> - Pontuação: " + score;
   }
   
-/*================================ Função para Reiniciar ==================================*/
-// Selecione o botão de reinício pelo ID
-const restartButton = document.getElementById('restart-button');
-
-// Adicione o manipulador de evento para o clique no botão de reinício
-restartButton.addEventListener('click', () => {
-  // Limpa a tela e reinicia o jogo
-  restart();
-});
-
-// Função para reiniciar o jogo
-function restart() {
-  // Remova a mensagem de "Game Over"
-  document.getElementById("text-start").innerHTML = "Para jogar, pressione alguma tecla!<br/>O tempo é contabilizado a cada segundo...";
-  
-  // Resete a pontuação para zero
-  score = 0;
-  const scoreElement = document.querySelector('.game-score');
-  scoreElement.textContent = `SCORE: ${score}`;
-  
-  // Coloque o Mario novamente na posição inicial
-  mario.src = '/imagens/mario.gif';
-  mario.style.width = '150px';
-  mario.style.marginLeft = '50px';
-  
-  // Reinicie os obstáculos e animações necessárias para começar o jogo novamente
-  
-  // Tornar o botão de reinício invisível novamente
-  restartButton.style.display = "none";
-  
-  // Inicie o jogo novamente
-  start();
-}
-
 
 /*================ Código para acabar o jogo ===================*/
 const checkGameOver = setInterval(() => {

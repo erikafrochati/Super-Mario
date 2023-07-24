@@ -13,9 +13,9 @@ body{
  /* Ajustar o tamanho da tela */
 
  .game-board {
-    width: 80%;
-    height: 70vh; /* 80% da altura da tela */
-    border-top: 800px;
+    width: 40%;
+    height: 50vh; /* 80% da altura da tela */
+    border-top: 700px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -110,7 +110,7 @@ body{
 
 /*Piso*/
 .floor {
-    width: 1500px;
+    width: 1499px;
     position: absolute;
     bottom: 0;
     padding-bottom: 34px;
@@ -239,14 +239,7 @@ animation: floor-animation-3 6.2s infinite linear;
     text-shadow: 0px 0px 10px #021920;
   }
   
-   /* Estilos para o elemento Botão Iniciar e Score, com um barra.*/
-.start {
-    display: flex;
-    flex-direction: column;
-    text-align:justify;
-    justify-content:end;
-  }
-  
+
 
   /* Estilos para o elemento que exibe a pontuação durante o jogo */
   .game-score {
@@ -287,6 +280,8 @@ animation: floor-animation-3 6.2s infinite linear;
     background-color: #3e8e41; /* Cor de fundo ainda mais escura quando o botão estiver pressionado */
   }
   
+
+
 @keyframes clouds-animation-1 {
     from{
         right: -550px;
