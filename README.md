@@ -10,7 +10,8 @@
 ***
 ## Agradecimentos :clap:
 
-* Primeiramente a Deus. 
+* Primeiramente a Deus.
+* Se você achar que esse projeto agregou algo para você, por favor deixe uma estrela.
 * Meus sinceros agradecimentos a todos que visitam o projeto e deixa uma estrela como reconhecimento.
 * Foi muito gratificante ir acompanhando as aulas do curso de Pygame, para desenvolver esse Jogo.
 * Caso queria acrescentar nesse projeto, entre em contato.
