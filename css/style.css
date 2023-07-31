@@ -13,9 +13,9 @@ body{
  /* Ajustar o tamanho da tela */
 
  .game-board {
-    width: 40%;
-    height: 50vh; /* 80% da altura da tela */
-    border-top: 700px;
+    width: 20%;
+    height: 20vh; /* 80% da altura da tela */
+    border-top: 600px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -148,7 +148,6 @@ animation: floor-animation-3 6.2s infinite linear;
 }
 
 
-
 @keyframes floor-animation-1 {
     0%{
         right:0px;
@@ -211,8 +210,7 @@ animation: floor-animation-3 6.2s infinite linear;
     background: linear-gradient(#87CEE8, #E0F6FF);
   }
 
-  
-/*Botão Reiniciar*/
+  /* Estilos para o Super Mario Game */
 .overlay-content {
     position: relative;
     width: 40%;
@@ -223,63 +221,85 @@ animation: floor-animation-3 6.2s infinite linear;
     background-size: contain;
   
     overflow: hidden;
-  
     z-index: 2;
   }
   
   /* Estilos para o Super Mario Game */
   
   .overlay-title {
+    color: #159daf;
     display: flex;
-    text-align:right;
     justify-content:flex-end;
-    width: 100%;
-    padding: 10px;
-  
-    text-shadow: 0px 0px 10px #021920;
+    margin-top:-2.50%;
+    text-shadow: 5px 10px 10px #1b5870;
   }
   
-
-
   /* Estilos para o elemento que exibe a pontuação durante o jogo */
   .game-score {
     text-align: right;
     display: inline-block;
-    background-color: #87CEE8;
+    background-color: #7bd1f0;
     color: #160f0f;
     padding: 8px 15px;
     border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 25px rgba(18, 107, 167, 0.747);
   } 
 
   
 /* Estilos para o botão de "Iniciar" */
 #start-button {
-    text-align: left;
-    display: inline-block;
+    margin-left:690px;
+    position:fixed;
+    bottom: 60px;
     background-color: #3e8e41;
     color: #fff;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bolder;
     margin-top: 10px;
     box-shadow: 0 2px 5px rgba(56, 42, 189, 0.2);
+   
   }
   
- /* Estilizar o botão quando o cursor estiver em cima */
-#start-button:hover {
-    background-color: #45a049; /* Cor de fundo mais escura quando o cursor estiver em cima */
+  /* Estilizar o botão quando o cursor estiver em cima */
+  #start-button:hover {
+    background-color: #82ca85; /* Cor de fundo mais escura quando o cursor estiver em cima */
   }
   
   /* Estilizar o botão quando estiver pressionado */
   #start-button:active {
     background-color: #3e8e41; /* Cor de fundo ainda mais escura quando o botão estiver pressionado */
+    border:solid black;
   }
   
+  .restart-message-button{
+    margin-left: 980px;
+    position:fixed;
+    bottom: 60px;
+    background-color:#3e8e41;
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(56, 42, 189, 0.2);
+}
+
+ /* Estilizar o botão quando o cursor estiver em cima */
+ .restart-message-button:hover {
+    background-color: #82ca85; /* Cor de fundo mais escura quando o cursor estiver em cima */
+  }
+  
+  /* Estilizar o botão quando estiver pressionado */
+.restart-message-button:active {
+    background-color: #3e8e41; /* Cor de fundo ainda mais escura quando o botão estiver pressionado */
+    border:solid black;
+  }
 
 
 @keyframes clouds-animation-1 {
@@ -309,6 +329,7 @@ animation: floor-animation-3 6.2s infinite linear;
     }
 }
 
+ /* Cor da fonte paragrafo <p> */
 
 p {
     font-family:'Roboto Mono', monospace;

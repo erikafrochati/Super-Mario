@@ -8,12 +8,13 @@ const audioGameOver = new Audio('/sons/audio_gameover.mp3');
 const floor1 = document.querySelector('.floor-1');
 const floor2 = document.querySelector('.floor-2');
 const floor3 = document.querySelector('.floor-3');
+const restartButton = document.querySelector("[data-restart-button]");
 
 let score = 0; // Adicione esta linha para declarar e inicializar a variável score
 let gameStarted = false; // Adicione a variável gameStarted e defina como false
 
 
-// Selecione o botão de "Iniciar" pelo ID
+// Função do Botão Iniciar
 const startButton = document.getElementById('start-button');
 
 // Adicione o manipulador de evento para o clique no botão de "Iniciar"
@@ -29,6 +30,11 @@ function restart() {
   // Iniciar o jogo novamente
   start();
 }
+
+// Função Botão Reiniciar tela do Jogo
+restartButton.addEventListener("click", function() {
+  location.reload();
+});
 
 /*================ Função Start ===================*/
 const start = () => {
@@ -147,3 +153,5 @@ const checkGameOver = setInterval(() => {
   }
 
 }, 10);
+
+restartButton.addEventListener("click", start);
