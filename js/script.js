@@ -63,8 +63,8 @@ const start = () => {
 
 document.addEventListener('keydown', (event) => {
   if (!gameStarted) {
-    if (event.code === "KeyR") { // Verifica se a tecla pressionada é a tecla "R"
-      restart(); // Inicia o jogo ao pressionar a tecla "R"
+    if (event.code === "KeyI") { // Verifica se a tecla pressionada é a tecla "I"
+      restart(); // Inicia o jogo ao pressionar a tecla "I"
       gameStarted = true;
     }
   }
